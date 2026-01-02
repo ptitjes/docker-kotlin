@@ -38,7 +38,7 @@ kotlin {
     }
 
     compilerOptions {
-        freeCompilerArgs.addAll(listOf("-Xconsistent-data-class-copy-visibility"))
+        freeCompilerArgs.addAll(listOf("-Xconsistent-data-class-copy-visibility", "-Xexpect-actual-classes"))
     }
 
     jvm {
