@@ -1,10 +1,10 @@
 public final class me/devnatan/dockerkt/DockerClient : kotlinx/coroutines/CoroutineScope {
 	public fun <init> ()V
-	public fun <init> (Lme/devnatan/dockerkt/DocketClientConfig;)V
+	public fun <init> (Lme/devnatan/dockerkt/DockerClientConfig;)V
 	public final fun close ()V
 	public final fun containers ()Lme/devnatan/dockerkt/resource/container/ContainerResource;
 	public final fun exec ()Lme/devnatan/dockerkt/resource/exec/ExecResource;
-	public final fun getConfig ()Lme/devnatan/dockerkt/DocketClientConfig;
+	public final fun getConfig ()Lme/devnatan/dockerkt/DockerClientConfig;
 	public fun getCoroutineContext ()Lkotlin/coroutines/CoroutineContext;
 	public final fun getHttpClient ()Lio/ktor/client/HttpClient;
 	public final fun getJson ()Lkotlinx/serialization/json/Json;
@@ -15,10 +15,23 @@ public final class me/devnatan/dockerkt/DockerClient : kotlinx/coroutines/Corout
 	public final fun volumes ()Lme/devnatan/dockerkt/resource/volume/VolumeResource;
 }
 
+public final class me/devnatan/dockerkt/DockerClientConfig {
+	public static final field Companion Lme/devnatan/dockerkt/DockerClientConfig$Companion;
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Z)V
+	public static final fun builder ()Lme/devnatan/dockerkt/DockerClientConfigBuilder;
+	public final fun getApiVersion ()Ljava/lang/String;
+	public final fun getDebugHttpCalls ()Z
+	public final fun getSocketPath ()Ljava/lang/String;
+}
+
+public final class me/devnatan/dockerkt/DockerClientConfig$Companion {
+	public final fun builder ()Lme/devnatan/dockerkt/DockerClientConfigBuilder;
+}
+
 public final class me/devnatan/dockerkt/DockerClientConfigBuilder {
 	public fun <init> ()V
 	public final fun apiVersion (Ljava/lang/String;)Lme/devnatan/dockerkt/DockerClientConfigBuilder;
-	public final fun build ()Lme/devnatan/dockerkt/DocketClientConfig;
+	public final fun build ()Lme/devnatan/dockerkt/DockerClientConfig;
 	public final fun debugHttpCalls (Z)Lme/devnatan/dockerkt/DockerClientConfigBuilder;
 	public static synthetic fun debugHttpCalls$default (Lme/devnatan/dockerkt/DockerClientConfigBuilder;ZILjava/lang/Object;)Lme/devnatan/dockerkt/DockerClientConfigBuilder;
 	public final fun forCurrentPlatform ()Lme/devnatan/dockerkt/DockerClientConfigBuilder;
@@ -45,19 +58,6 @@ public class me/devnatan/dockerkt/DockerResourceException : me/devnatan/dockerkt
 public final class me/devnatan/dockerkt/DockerResponseException : me/devnatan/dockerkt/DockerResourceException {
 	public fun getMessage ()Ljava/lang/String;
 	public final fun getStatusCode ()Lio/ktor/http/HttpStatusCode;
-}
-
-public final class me/devnatan/dockerkt/DocketClientConfig {
-	public static final field Companion Lme/devnatan/dockerkt/DocketClientConfig$Companion;
-	public fun <init> (Ljava/lang/String;Ljava/lang/String;Z)V
-	public static final fun builder ()Lme/devnatan/dockerkt/DockerClientConfigBuilder;
-	public final fun getApiVersion ()Ljava/lang/String;
-	public final fun getDebugHttpCalls ()Z
-	public final fun getSocketPath ()Ljava/lang/String;
-}
-
-public final class me/devnatan/dockerkt/DocketClientConfig$Companion {
-	public final fun builder ()Lme/devnatan/dockerkt/DockerClientConfigBuilder;
 }
 
 public abstract interface class me/devnatan/dockerkt/io/DockerClientFrameListener {

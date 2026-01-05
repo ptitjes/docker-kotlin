@@ -4169,10 +4169,10 @@ final class me.devnatan.dockerkt.resource.volume/VolumeResource { // me.devnatan
 }
 
 final class me.devnatan.dockerkt/DockerClient : kotlinx.coroutines/CoroutineScope, me.devnatan.dockerkt/Closeable { // me.devnatan.dockerkt/DockerClient|null[0]
-    constructor <init>(me.devnatan.dockerkt/DocketClientConfig) // me.devnatan.dockerkt/DockerClient.<init>|<init>(me.devnatan.dockerkt.DocketClientConfig){}[0]
+    constructor <init>(me.devnatan.dockerkt/DockerClientConfig) // me.devnatan.dockerkt/DockerClient.<init>|<init>(me.devnatan.dockerkt.DockerClientConfig){}[0]
 
     final val config // me.devnatan.dockerkt/DockerClient.config|{}config[0]
-        final fun <get-config>(): me.devnatan.dockerkt/DocketClientConfig // me.devnatan.dockerkt/DockerClient.config.<get-config>|<get-config>(){}[0]
+        final fun <get-config>(): me.devnatan.dockerkt/DockerClientConfig // me.devnatan.dockerkt/DockerClient.config.<get-config>|<get-config>(){}[0]
     final val containers // me.devnatan.dockerkt/DockerClient.containers|{}containers[0]
         final fun <get-containers>(): me.devnatan.dockerkt.resource.container/ContainerResource // me.devnatan.dockerkt/DockerClient.containers.<get-containers>|<get-containers>(){}[0]
     final val coroutineContext // me.devnatan.dockerkt/DockerClient.coroutineContext|{}coroutineContext[0]
@@ -4197,11 +4197,26 @@ final class me.devnatan.dockerkt/DockerClient : kotlinx.coroutines/CoroutineScop
     final fun close() // me.devnatan.dockerkt/DockerClient.close|close(){}[0]
 }
 
+final class me.devnatan.dockerkt/DockerClientConfig { // me.devnatan.dockerkt/DockerClientConfig|null[0]
+    constructor <init>(kotlin/String, kotlin/String, kotlin/Boolean) // me.devnatan.dockerkt/DockerClientConfig.<init>|<init>(kotlin.String;kotlin.String;kotlin.Boolean){}[0]
+
+    final val apiVersion // me.devnatan.dockerkt/DockerClientConfig.apiVersion|{}apiVersion[0]
+        final fun <get-apiVersion>(): kotlin/String // me.devnatan.dockerkt/DockerClientConfig.apiVersion.<get-apiVersion>|<get-apiVersion>(){}[0]
+    final val debugHttpCalls // me.devnatan.dockerkt/DockerClientConfig.debugHttpCalls|{}debugHttpCalls[0]
+        final fun <get-debugHttpCalls>(): kotlin/Boolean // me.devnatan.dockerkt/DockerClientConfig.debugHttpCalls.<get-debugHttpCalls>|<get-debugHttpCalls>(){}[0]
+    final val socketPath // me.devnatan.dockerkt/DockerClientConfig.socketPath|{}socketPath[0]
+        final fun <get-socketPath>(): kotlin/String // me.devnatan.dockerkt/DockerClientConfig.socketPath.<get-socketPath>|<get-socketPath>(){}[0]
+
+    final object Companion { // me.devnatan.dockerkt/DockerClientConfig.Companion|null[0]
+        final fun builder(): me.devnatan.dockerkt/DockerClientConfigBuilder // me.devnatan.dockerkt/DockerClientConfig.Companion.builder|builder(){}[0]
+    }
+}
+
 final class me.devnatan.dockerkt/DockerClientConfigBuilder { // me.devnatan.dockerkt/DockerClientConfigBuilder|null[0]
     constructor <init>() // me.devnatan.dockerkt/DockerClientConfigBuilder.<init>|<init>(){}[0]
 
     final fun apiVersion(kotlin/String): me.devnatan.dockerkt/DockerClientConfigBuilder // me.devnatan.dockerkt/DockerClientConfigBuilder.apiVersion|apiVersion(kotlin.String){}[0]
-    final fun build(): me.devnatan.dockerkt/DocketClientConfig // me.devnatan.dockerkt/DockerClientConfigBuilder.build|build(){}[0]
+    final fun build(): me.devnatan.dockerkt/DockerClientConfig // me.devnatan.dockerkt/DockerClientConfigBuilder.build|build(){}[0]
     final fun debugHttpCalls(kotlin/Boolean = ...): me.devnatan.dockerkt/DockerClientConfigBuilder // me.devnatan.dockerkt/DockerClientConfigBuilder.debugHttpCalls|debugHttpCalls(kotlin.Boolean){}[0]
     final fun forCurrentPlatform(): me.devnatan.dockerkt/DockerClientConfigBuilder // me.devnatan.dockerkt/DockerClientConfigBuilder.forCurrentPlatform|forCurrentPlatform(){}[0]
     final fun socketPath(kotlin/String): me.devnatan.dockerkt/DockerClientConfigBuilder // me.devnatan.dockerkt/DockerClientConfigBuilder.socketPath|socketPath(kotlin.String){}[0]
@@ -4214,21 +4229,6 @@ final class me.devnatan.dockerkt/DockerResponseException : me.devnatan.dockerkt/
         final fun <get-message>(): kotlin/String? // me.devnatan.dockerkt/DockerResponseException.message.<get-message>|<get-message>(){}[0]
     final val statusCode // me.devnatan.dockerkt/DockerResponseException.statusCode|{}statusCode[0]
         final fun <get-statusCode>(): io.ktor.http/HttpStatusCode // me.devnatan.dockerkt/DockerResponseException.statusCode.<get-statusCode>|<get-statusCode>(){}[0]
-}
-
-final class me.devnatan.dockerkt/DocketClientConfig { // me.devnatan.dockerkt/DocketClientConfig|null[0]
-    constructor <init>(kotlin/String, kotlin/String, kotlin/Boolean) // me.devnatan.dockerkt/DocketClientConfig.<init>|<init>(kotlin.String;kotlin.String;kotlin.Boolean){}[0]
-
-    final val apiVersion // me.devnatan.dockerkt/DocketClientConfig.apiVersion|{}apiVersion[0]
-        final fun <get-apiVersion>(): kotlin/String // me.devnatan.dockerkt/DocketClientConfig.apiVersion.<get-apiVersion>|<get-apiVersion>(){}[0]
-    final val debugHttpCalls // me.devnatan.dockerkt/DocketClientConfig.debugHttpCalls|{}debugHttpCalls[0]
-        final fun <get-debugHttpCalls>(): kotlin/Boolean // me.devnatan.dockerkt/DocketClientConfig.debugHttpCalls.<get-debugHttpCalls>|<get-debugHttpCalls>(){}[0]
-    final val socketPath // me.devnatan.dockerkt/DocketClientConfig.socketPath|{}socketPath[0]
-        final fun <get-socketPath>(): kotlin/String // me.devnatan.dockerkt/DocketClientConfig.socketPath.<get-socketPath>|<get-socketPath>(){}[0]
-
-    final object Companion { // me.devnatan.dockerkt/DocketClientConfig.Companion|null[0]
-        final fun builder(): me.devnatan.dockerkt/DockerClientConfigBuilder // me.devnatan.dockerkt/DocketClientConfig.Companion.builder|builder(){}[0]
-    }
 }
 
 open class me.devnatan.dockerkt.resource.container/ContainerException : me.devnatan.dockerkt/DockerResourceException // me.devnatan.dockerkt.resource.container/ContainerException|null[0]
