@@ -164,5 +164,6 @@ dokka {
 
 mavenPublishing {
     publishToMavenCentral(automaticRelease = true)
+    pomFromGradleProperties()
     signAllPublications()
 }
