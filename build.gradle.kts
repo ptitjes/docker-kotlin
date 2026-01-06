@@ -142,7 +142,6 @@ kotlinter {
     reporters = arrayOf(ReporterType.html.name)
 }
 
-
 dokka {
     dokkaPublications.html {
         moduleName.set("Docker Kotlin")
@@ -161,4 +160,9 @@ dokka {
             remoteLineSuffix.set("#L")
         }
     }
+}
+
+mavenPublishing {
+    publishToMavenCentral(automaticRelease = true)
+    signAllPublications()
 }
